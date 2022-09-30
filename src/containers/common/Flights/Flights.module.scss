@@ -1,0 +1,12 @@
+.container {
+  @include breakpoint(wide) {
+    padding-bottom: 120px;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 10px 0 30px;
+  }
+}

@@ -1,0 +1,192 @@
+.container {
+  @extend %flex-align;
+  max-width: 240px;
+
+  &__display {
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    @extend %flex-center;
+
+    @include breakpoint(tablet) {
+      width: 100%;
+      margin: 32px 0 0px;
+    }
+
+    @include breakpoint(tablet) {
+      margin: 16px 0 0px;
+    }
+
+    // &__more_btn {
+    //   display: none;
+
+    //   @include breakpoint(tablet) {
+    //     display: block;
+    //   }
+    // }
+
+    &__show {
+      @extend %flex-align;
+      position: absolute;
+      cursor: pointer;
+      width: 130px;
+      right: 30px;
+      top: 5px;
+
+      @include breakpoint(tablet) {
+        display: none;
+      }
+
+      &__txt {
+        color: $white;
+        margin-right: 15px;
+      }
+
+      &__content {
+        @extend %flex-between;
+        border-radius: 8px 8px 0 0;
+        cursor: pointer;
+        height: 32px;
+
+        &__number {
+          color: #84878d;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    &__expandable {
+      border-radius: 0 0 8px 8px;
+      width: 100%;
+      padding: 3px 0 0 0;
+      overflow-y: scroll;
+      position: absolute;
+      top: 100%;
+      background-color: $black;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &__child {
+        cursor: pointer;
+
+        p {
+          width: 100%;
+          padding: 10px 15px;
+        }
+      }
+    }
+  }
+
+  &__tick {
+    width: 32px;
+    height: 32px;
+    color: #048f92;
+    margin-right: 8px;
+    @extend %flex-center;
+
+    svg {
+      path {
+        fill: #048f92;
+      }
+    }
+  }
+
+  &__break {
+    width: 32px;
+    height: 32px;
+    color: #048f92;
+    margin-right: 8px;
+    @extend %flex-center;
+
+    a {
+      width: 100%;
+      height: 100%;
+      @extend %flex-center;
+    }
+  }
+
+  &_active {
+    margin: 0 20px;
+
+    a {
+      font-weight: bold;
+      border: 1px solid $main;
+      border-radius: 50%;
+      padding: 20px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+.block {
+  border-radius: 8px 8px 0 0;
+  @extend %flex-between;
+  position: relative;
+  width: 100%;
+
+  &__content {
+    @extend %flex-between;
+    border-radius: 8px 8px 0 0;
+    background-color: $black;
+    width: 100%;
+    padding: 4px 8px;
+
+    &_radius {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  path {
+    fill: $white !important;
+  }
+}
+
+.right_block {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -1px;
+  width: 48px;
+  background: gray;
+
+  @include breakpoint(tablet) {
+    display: none;
+  }
+
+  &__arrow {
+    @extend %flex-center;
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    margin: 4px 0;
+    padding: 12px 0;
+
+    path {
+      fill: #048f92;
+    }
+  }
+}
+
+.arrow {
+  transform: rotate(0);
+  transition: all 0.3s;
+
+  &_rotate {
+    transform: rotate(180deg);
+    transition: all 0.3s;
+  }
+}

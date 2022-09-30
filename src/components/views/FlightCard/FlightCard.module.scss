@@ -1,0 +1,26 @@
+.container {
+  min-width: 240px;
+  padding: 14px;
+  background-color: #048f92;
+  border-radius: 8px;
+  color: white;
+  margin: 10px 0;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    min-width: unset;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  p {
+    margin: 8px 0;
+    max-width: 130px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
